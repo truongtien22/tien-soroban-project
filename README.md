@@ -1,22 +1,95 @@
-# Soroban Project
+# Subscription Hub
+
+A simple smart contract built with Stellar Soroban for managing user subscriptions on-chain.
+
+## Overview
+
+Subscription Hub allows users to register and store subscription information directly on the Stellar blockchain. Each user can save their subscription plan and retrieve it later.
+
+This project was developed as a learning project for Stellar Soroban smart contract development.
+
+## Features
+
+* Register a subscription
+* Store subscription information on-chain
+* Retrieve subscription details
+* Built with Rust and Soroban SDK
+
+## Smart Contract Functions
+
+### subscribe()
+
+Stores a user's subscription information.
+
+Parameters:
+
+* `user` - User identifier
+* `username` - User name
+* `plan` - Subscription plan
+
+### get_subscription()
+
+Returns the stored subscription information for a user.
+
+## Example
+
+Register a subscription:
+
+```bash
+subscribe(
+    user = "alice",
+    username = "Tien",
+    plan = "Netflix"
+)
+```
+
+Retrieve subscription:
+
+```bash
+get_subscription("alice")
+```
+
+Expected result:
+
+```text
+Username: Tien
+Plan: Netflix
+```
+
+## Technologies Used
+
+* Rust
+* Stellar Soroban SDK
+* Stellar Testnet
+* Soroban Studio
 
 ## Project Structure
 
-This repository uses the recommended structure for a Soroban project:
-
 ```text
-.
-├── contracts
-│   └── hello_world
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── test.rs
-│       └── Cargo.toml
-├── Cargo.toml
-└── README.md
+src/
+├── lib.rs
+└── test.rs
 ```
 
-- New Soroban contracts can be put in `contracts`, each in their own directory. There is already a `hello_world` contract in there to get you started.
-- If you initialized this project with any other example contracts via `--with-example`, those contracts will be in the `contracts` directory as well.
-- Contracts should have their own `Cargo.toml` files that rely on the top-level `Cargo.toml` workspace for their dependencies.
-- Frontend libraries can be added to the top-level directory as well. If you initialized this project with a frontend template via `--frontend-template` you will have those files already included.
+## Test
+
+The project includes unit tests to verify:
+
+* Subscription creation
+* Subscription retrieval
+* Data integrity
+
+## Future Improvements
+
+* Multiple subscriptions per user
+* Subscription expiration dates
+* Automatic renewals
+* Payment tracking
+
+## Author
+
+Tien Truong
+
+## License
+
+MIT License
