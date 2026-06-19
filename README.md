@@ -1,6 +1,6 @@
-# Subscription Hub
+# Tien Soroban Project
 
-A simple smart contract built with Stellar Soroban for managing user subscriptions on-chain.
+A simple subscription management smart contract built with Stellar Soroban.
 
 ## Overview
 
